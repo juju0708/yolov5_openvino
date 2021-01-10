@@ -270,7 +270,7 @@ def process_image(net, input_image):
 
 if __name__ == '__main__':
     # Test API
-    img = cv2.imread('../onnx/out/bus.jpg')
+    img = cv2.imread('../onnx/bus.jpg')
     predictor = init()
     import time
     t = time.time()
