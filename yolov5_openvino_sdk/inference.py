@@ -138,9 +138,7 @@ def init():
     Returns: model
 
     """
-    #model_xml = "/project/train/src_repo/yolov5/runs/exp0/weights/best.xml"
-    #model_xml = "/usr/local/ev_sdk/model/openvino/yolov5x_10_best.xml"
-    model_xml = "/home/pi/yolov5/onnx/out/yolov5s_2.0.xml"
+    model_xml = "../onnx/out/yolov5s_2.0.xml"
     if not os.path.isfile(model_xml):
         log.error(f'{model_xml} does not exist')
         return None
@@ -272,7 +270,7 @@ def process_image(net, input_image):
 
 if __name__ == '__main__':
     # Test API
-    img = cv2.imread('../inference/images/bus.jpg')
+    img = cv2.imread('../onnx/out/bus.jpg')
     predictor = init()
     import time
     t = time.time()
